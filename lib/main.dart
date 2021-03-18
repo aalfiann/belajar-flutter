@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'component/belajarPageLogin.dart';
+import 'component/belajarRequest.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: BelajarPageLogin(),
+      home: BelajarRequest(),
     );
   }
 }
