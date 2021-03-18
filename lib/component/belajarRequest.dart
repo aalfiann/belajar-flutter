@@ -10,6 +10,7 @@ class BelajarRequest extends StatefulWidget {
 class _BelajarRequestState extends State<BelajarRequest> {
   PostResult postResult;
   GetResult getResult;
+  String multiple = '';
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +32,9 @@ class _BelajarRequestState extends State<BelajarRequest> {
                     postResult.created
                 : 'Tidak ada data!')),
             Text((getResult != null
-                ? getResult.id.toString() + ' | ' + getResult.name
+                ? getResult.id + ' | ' + getResult.name
                 : 'Tidak ada user data!')),
+            Text((multiple != '' ? multiple : 'Kosong')),
             Container(
               color: Colors.blue[400],
               child: MaterialButton(
@@ -62,7 +64,25 @@ class _BelajarRequestState extends State<BelajarRequest> {
                   style: TextStyle(color: Colors.white),
                 ),
               ),
-            )
+            ),
+            Container(
+              color: Colors.blue[400],
+              child: MaterialButton(
+                onPressed: () {
+                  GetResult.getUsers('2').then((value) {
+                    multiple = '';
+                    for (var i =0; i< value.length; i++) {
+                      multiple = multiple + '[' + value[i].name + '] ';
+                    }
+                    setState(() {});
+                  });
+                },
+                child: Text(
+                  'GET LIST',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
           ],
         ),
       ),
