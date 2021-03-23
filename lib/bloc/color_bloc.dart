@@ -1,7 +1,5 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'dart:async';
 
 enum ColorEvent { to_amber, to_light_blue }
 
