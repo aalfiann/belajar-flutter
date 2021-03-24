@@ -132,7 +132,7 @@ class BelajarPageLogin extends StatelessWidget {
                           child: Container(
                             alignment: Alignment.center,
                             padding: EdgeInsets.all(10),
-                            width: 200,
+                            width: 100,
                             child: Text(
                               'Sign In',
                               style: TextStyle(color: Colors.white),
